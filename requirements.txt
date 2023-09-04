@@ -1,6 +1,6 @@
 gunicorn
 flask
+joblib
 sklearn
-pickle
 numpy
 pandas
