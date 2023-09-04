@@ -19,13 +19,13 @@ def hello_world():
 def predict():
 
     data = pd.read_csv('evdataset.csv')
-    values = [float(x) for x in request.form.values()]
+    values = [x for x in request.form.values()]
 
     final_features = [np.array(values)]
     # print(final_features)
 
-    arr = preprocessing.normalize(final_features)
-    prediction = model.predict(arr)
+    #arr = preprocessing.normalize(final_features)
+    prediction = model.predict(final_features)
 
     new = np.round(prediction, 2)
     return render_template('result.html', a1=new[0][0], a2=new[0][1], a3=new[0][2], a4=new[0][3], a5=new[0][4], a6=new[0][5], a7=new[0][6])
