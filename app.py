@@ -3,8 +3,9 @@ from sklearn import preprocessing
 import pickle
 import numpy as np
 import pandas as pd
+import joblib as jb
 
-model = pickle.load(open('model.pkl', 'rb'))
+model = jb.load('model.pkl')
 
 app = Flask(__name__)
 
